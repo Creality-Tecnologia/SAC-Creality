@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SAC Creality Tecnologia</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+<section id="telaInicio" class="tela ativa">
+    <!-- ================= LOGO ================= -->
+
+    <header>
+
+        <img src="img/logo.png"
+             alt="Creality Tecnologia"
+             class="logo">
+
+    </header>
+
+    <!-- ================= SARA ================= -->
+
+    <section class="card-sara">
+
+        <div class="foto-sara">
+
+            <img src="img/sara.png" alt="Sara">
+
+        </div>
+
+        <div class="texto-sara">
+
+            <h1>Olá! 👋</h1>
+
+            <h2>Me chamo <span>Sara</span>,</h2>
+
+            <p>
+
+                assistente virtual da
+                <strong>Creality Tecnologia</strong>.
+
+            </p>
+
+            <div class="divisor"></div>
+
+            <p class="destaque">
+
+                Em que posso ajudar?
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= MENU ================= -->
+
+    <section class="menu">
+
+        <div class="menu-card"
+            onclick="abrirTela('telaPagamento');mostrarPergunta('comoUsar')">
+
+            <div class="menu-left">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <span>Como utilizar a máquina</span>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </div>
+
+        <div class="menu-card" onclick="abrirTela('telaPagamento');mostrarPergunta('inicio')">
+
+            <div class="menu-left">
+
+                <i class="fa-regular fa-credit-card"></i>
+
+                <span>Problemas no pagamento</span>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </div>
+
+        <div class="menu-card"
+            onclick="abrirTela('telaPagamento');mostrarPergunta('produtoInicio')">
+
+            <div class="menu-left">
+
+                <i class="fa-solid fa-box-open"></i>
+
+                <span>Problemas com o produto</span>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </div>
+
+        <div class="menu-card"
+            onclick="abrirTela('telaPagamento');mostrarPergunta('maquinaInicio')">
+
+            <div class="menu-left">
+
+                <i class="fa-solid fa-gears"></i>
+
+                <span>Problemas na máquina</span>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </div>
+
+        <div class="menu-card"
+             onclick="abrirTela('telaPagamento');mostrarPergunta('reclamacaoInicio')">
+
+            <div class="menu-left">
+
+                <i class="fa-regular fa-comment"></i>
+
+                <span>Reclamações e sugestões</span>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </div>
+
+    </section>
+
+    <!-- ================= RODAPÉ ================= -->
+
+    <footer class="footer-card">
+
+        <div class="footer-img">
+
+            <img src="img/maquina.png" alt="Máquina">
+
+        </div>
+
+        <div class="footer-info">
+
+            <div>
+
+                <small>LOCAL</small>
+
+                <h3>Carregando...</h3>
+
+            </div>
+
+            <div>
+
+                <small>MÁQUINA</small>
+
+                <h3 id="identificacaoMaquina">Carregando...</h3>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    </section>
+
+    <section id="telaPagamento" class="tela">
+
+    <div class="topo-tela">
+
+        <button class="btn-voltar"
+                onclick="abrirTela('telaInicio')">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Voltar
+
+        </button>
+
+    </div>
+
+    <div id="conteudoPagamento">
+
+</div>
+
+</section>
+
+<section id="telaProduto" class="tela">
+
+    <h2>Problemas com Produto</h2>
+
+</section>
+
+<section id="telaMaquina" class="tela">
+
+    <h2>Problemas na Máquina</h2>
+
+</section>
+
+<section id="telaReclamacoes" class="tela">
+
+    <h2>Reclamações</h2>
+
+</section>
+
+<section id="telaAtendente" class="tela">
+
+    <h2>Atendente</h2>
+
+</section>
+
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/produto.js"></script>
+<script src="js/api.js"></script>
+<script src="js/seletorProdutos.js"></script>
+<script src="js/pagamento.js"></script>
+
+</body>
+
+</html>
