@@ -877,31 +877,73 @@ function mostrarPergunta(nome){
 }
 
 
-function enviarChamado(){
+async function enviarChamado(){
 
-    const nome = document.getElementById("nomeCliente").value.trim();
-    const telefone = document.getElementById("telefoneCliente").value.trim();
+    const nome =
+        document.getElementById("nomeCliente").value.trim();
+
+    const telefone =
+        document.getElementById("telefoneCliente").value.trim();
+
 
     if(nome === "" || telefone === ""){
 
         alert("Informe seu primeiro nome e telefone.");
+
         return;
 
     }
 
+
+    const sucesso = await abrirChamadoSAC(
+
+        "Problema não resolvido pelo atendimento automático",
+
+        "Cliente solicitou atendimento da equipe técnica através do SAC.",
+
+        nome,
+
+        telefone
+
+    );
+
+
+    if(!sucesso){
+
+        alert(
+            "Não foi possível registrar o chamado. " +
+            "Verifique sua conexão com a internet e tente novamente."
+        );
+
+        return;
+
+    }
+
+
     perguntas.chamadoEnviado.mensagem = `
 
-✅ Chamado registrado com sucesso!
+        <h2>✅ Chamado registrado com sucesso!</h2>
 
-Obrigado, ${nome}!
+        <p>
+        Obrigado, ${nome}!
+        </p>
 
-Recebemos sua solicitação e ela foi encaminhada para nossa equipe técnica.
+        <p>
+        Recebemos sua solicitação e ela foi encaminhada
+        para nossa equipe técnica.
+        </p>
 
-Caso seja necessário, nossa equipe entrará em contato através do telefone informado para dar andamento ao atendimento.
+        <p>
+        Caso seja necessário, nossa equipe entrará em contato
+        através do telefone informado para dar andamento ao atendimento.
+        </p>
 
-Agradecemos pela confiança na Creality Tecnologia.
+        <p>
+        Agradecemos pela confiança na Creality Tecnologia.
+        </p>
 
-`;
+    `;
+
 
     mostrarPergunta("chamadoEnviado");
 
